@@ -1,6 +1,3 @@
-// Array data structure self created 
-// we declare more function to perform well
-
 #include<iostream>
 using namespace std;
 //create array class
@@ -97,6 +94,7 @@ int Array::get(int index){
     if(index>=0 && index<=Lastindex)
         return ptr[index];
     cout<<endl<<"Invalid index or empty array";
+    return -1;
 }
 
 int Array::count(){
@@ -118,6 +116,11 @@ int Array::find(int data){
 }
 int main(){
     Array obj(5);
+    obj.append(5);
+    obj.append(6);
+    obj.append(8);
+    int n=obj.find(6);
+    cout<<n;
     if(obj.isEmpty())
         cout<<"empty array";
     return 0;
