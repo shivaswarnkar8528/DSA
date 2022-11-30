@@ -1,0 +1,42 @@
+//insertion & print in linked list by procedural method
+#include <iostream>
+using namespace std;
+class Node{
+    public:
+        int data;
+        Node *next;
+        Node(int d){
+        data=d;
+        next=NULL;
+    }
+};
+void insertAtbegin(Node *&head,int data){
+    if(head==NULL){
+        head=new Node(data); 
+        return;  
+    }
+    else{
+        Node *n=new Node(data);
+        n->next=head;
+        head=n;
+    }
+}
+void print(Node *head){
+    while(head){
+        cout<<head->data<<"->";
+        head=head->next;
+    }
+    
+}
+int main() {
+   Node *head=NULL;
+//    cout<<head;
+insertAtbegin(head,3);
+insertAtbegin(head,4);
+insertAtbegin(head,5);
+insertAtbegin(head,6);
+print(head);
+
+
+
+}
